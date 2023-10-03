@@ -1,3 +1,7 @@
+<script>
+	import { count } from "../../routes/count.js";
+</script>
+
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
@@ -23,4 +27,8 @@
 		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
 		using it with JavaScript disabled!
 	</p>
+
+	<h3>
+		Your cart has {$count} items in it!
+	</h3>
 </div>

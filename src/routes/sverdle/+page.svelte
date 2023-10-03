@@ -1,4 +1,6 @@
 <script>
+	import { count } from '../../routes/count.js';
+
 	import { confetti } from '@neoconfetti/svelte';
 	import { enhance } from '$app/forms';
 
@@ -87,6 +89,15 @@
 			.querySelector(`[data-key="${event.key}" i]`)
 			?.dispatchEvent(new MouseEvent('click', { cancelable: true }));
 	}
+
+	function incrementCount () {
+		count.update(n => n + 1);
+	}
+
+	function decrementCount () {
+		count.update(n => n - 1);
+	}
+
 </script>
 
 <svelte:window on:keydown={keydown} />
@@ -97,6 +108,10 @@
 </svelte:head>
 
 <h1 class="visually-hidden">Sverdle</h1>
+
+<h2> The global count is: {$count} </h2>
+<button on:click={incrementCount}>Increment</button>
+<button on:click={decrementCount}>Decrement</button>
 
 <form
 	method="POST"
