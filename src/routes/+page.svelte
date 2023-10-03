@@ -2,6 +2,7 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { count } from "../routes/count.js";
 </script>
 
 <svelte:head>
@@ -26,6 +27,10 @@
 	</h2>
 
 	<Counter />
+
+	<h3>
+		Your cart has {$count} items in it!
+	</h3>
 </section>
 
 <style>
